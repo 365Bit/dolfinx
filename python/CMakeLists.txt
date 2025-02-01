@@ -34,6 +34,7 @@ endif()
 nanobind_add_module(
   cpp
   NOMINSIZE
+  NB_DOMAIN ${PROJECT_NAME}
   dolfinx/wrappers/dolfinx.cpp
   dolfinx/wrappers/assemble.cpp
   dolfinx/wrappers/common.cpp
