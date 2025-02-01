@@ -15,3 +15,11 @@ Below is guidance for building the DOLFINx Python interface.
 To build in debug and editable mode for development:
 
      pip -v install --check-build-dependencies --config-settings=build-dir="build" --config-settings=cmake.build-type="Debug"  --config-settings=install.strip=false --no-build-isolation -e .
+
+### Re-generating nanobind stubs
+
+To update the nanobind type stubs, after installing the DOLFINx Python interface, run:
+```sh
+python -m nanobind.stubgen -m dolfinx.cpp -M dolfinx/py.typed -o dolfinx/cpp.pyi
+```
+from the `python/` directory.
